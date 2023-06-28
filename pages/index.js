@@ -31,6 +31,7 @@ export default function Home({ allPostsData, news }) {
     <Layout home>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
+        <h3>C'est top</h3>
         <ul className={utilStyles.list}>
           {allPostsData?.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
