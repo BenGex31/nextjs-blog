@@ -4,6 +4,7 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
+import { toDayString } from "../components/today";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -13,7 +14,7 @@ export async function getStaticProps() {
   };
 
   const response = await fetch(
-    "https://newsapi.org/v2/everything?q=motogp&from=2023-05-27&sortBy=publishedAt&apiKey=2474fba8daed4dbfa7136f82eb4d6491",
+    `https://newsapi.org/v2/everything?q=motogp&from=${toDayString}&sortBy=publishedAt&apiKey=2474fba8daed4dbfa7136f82eb4d6491`,
     requestOptions
   );
   const news = await response.json();
